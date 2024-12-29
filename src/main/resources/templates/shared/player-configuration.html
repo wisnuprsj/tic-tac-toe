@@ -1,0 +1,28 @@
+<div th:fragment="player-configuration">
+  <form
+    action="#"
+    th:action="@{/tictactoe/play}"
+    th:object="${setPlayer}"
+    method="POST"
+  >
+    <div class="player-config">
+      <div class="players">
+        <label for="playerOne">Player One</label>
+        <input type="text" id="playerOne" th:field="*{playerOne}" />
+      </div>
+      <div class="players">
+        <label for="playerTwo">Player Two</label>
+        <input type="text" id="playerTwo" th:field="*{playerTwo}" />
+      </div>
+    </div>
+    <div class="game-dimension">
+      <div class="dimension">
+        <label for="dimension">Game Dimension</label>
+        <input type="number" id="dimension" th:field="*{dimension}" min="3" />
+      </div>
+    </div>
+    <div class="playGame">
+      <button type="submit">Play</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,48 @@
+<div th:fragment="games-grid" class="game-container">
+  <div class="game-action">
+    <button
+      type="button"
+      th:onclick="|window.location.href='/tictactoe'|"
+      class="resetGame"
+    >
+      Reset Game
+    </button>
+    <button
+      type="button"
+      th:disabled="!${winnerExist}"
+      class="playAgain"
+      th:classappend="${winnerExist ? '' : 'disabled'}"
+      th:onclick="|window.location.href='/tictactoe/play'|"
+    >
+      Play Again
+    </button>
+  </div>
+  <div class="gameStart">
+    <div class="player player-one-label">
+      <h1 th:text="${playerOneName}"></h1>
+      <h1 th:text="'Score : ' + ${playerOneScore}"></h1>
+      <p th:if="${winnerExist == False && playerOneTurn == True}">Your Turn</p>
+    </div>
+    <div class="games-grid">
+      <div class="games-grid-row" th:each="row : ${grid}">
+        <form
+          th:each="textbox : ${row}"
+          th:action="@{/tictactoe/play/} + ${textbox.uuid} + '/' + ${playerUuid}"
+          class="form-tic"
+          th:classappend="${textbox.flagWinner == true ? 'winner' : ''}"
+        >
+          <button
+            type="submit"
+            th:text="${textbox.playerOne} ? ${textbox.playerOne.label} : (${textbox.playerTwo} ? ${textbox.playerTwo.label} : '-')"
+            th:disabled="${winnerExist} ? true : (${textbox.playerOne} ? true : (${textbox.playerTwo} ? true : false))"
+          ></button>
+        </form>
+      </div>
+    </div>
+    <div class="player player-two-label">
+      <h1 th:text="${playerTwoName}"></h1>
+      <h1 th:text="'Score : ' + ${playerTwoScore}"></h1>
+      <p th:if="${winnerExist == False && playerTwoTurn == True}">Your Turn</p>
+    </div>
+  </div>
+</div>

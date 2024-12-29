@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&display=swap");
+
+body {
+  width: 100vw;
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-container > .title > h1 {
+  font-weight: 700;
+  color: white;
+  font-family: Alkatra;
+  font-size: 2.25rem /* 36px */;
+  line-height: 2.5rem /* 40px */;
+  margin-bottom: 3rem;
+}
+
+.header-container > .banner > h1 {
+  font-weight: 700;
+  font-family: Alkatra;
+  font-size: 2.25rem /* 36px */;
+  line-height: 2.5rem /* 40px */;
+  margin-bottom: 3rem;
+}
+
+.header-container > .banner > h1.lose {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
+.header-container > .banner > h1.win {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.startGame > button {
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+  cursor: pointer;
+}
+
+.setPlayers {
+  width: 60%;
+}
+
+.player-config {
+  display: flex;
+  justify-content: space-around;
+}
+
+.players > label,
+.players > input {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.players > input {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.players > label {
+  color: white;
+}
+
+.game-dimension {
+  display: flex;
+  justify-content: center;
+}
+
+.dimension > label,
+.dimension > input {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.dimension > input {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.dimension > label {
+  color: white;
+}
+
+.playGame {
+  display: flex;
+  justify-content: center;
+}
+
+.playGame > button {
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+  cursor: pointer;
+}
+
+.game-wrapper {
+  width: 100%;
+}
+
+.game-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gameStart {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.games-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.games-grid-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.games-grid-row > form {
+  padding: 10px;
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+}
+
+.games-grid-row > form > button {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.player > h1 {
+  font-weight: 700;
+  color: white;
+  font-family: Alkatra;
+  font-size: 2.25rem /* 36px */;
+  line-height: 2.5rem /* 40px */;
+  margin: 0;
+}
+
+.player > p {
+  color: red;
+  font-family: Alkatra;
+  font-size: 1.25rem /* 36px */;
+  line-height: 1.5rem /* 40px */;
+  margin: 0;
+}
+
+.game-action {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.game-action .resetGame {
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+  cursor: pointer;
+}
+
+.game-action .playAgain {
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+  cursor: pointer;
+}
+
+.game-action .playAgain.disabled {
+  opacity: 0.5;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+  cursor: pointer;
+}
+
+.games-grid-row form.winner {
+  --tw-bg-opacity: 1;
+  background-color: rgb(52 211 153 / var(--tw-bg-opacity));
+}

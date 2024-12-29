@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Tic Tac Toe Game</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- <link th:href="@{/main.css}" rel="stylesheet" /> -->
+    <link th:href="@{/css/index.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="title">
+          <h1>Tic Tac Toe Game</h1>
+        </div>
+        <div class="banner">
+          <h1
+            th:if="${winnerExist == true && boxTicked != maxTick}"
+            class="win"
+          >
+            You WIN !!
+          </h1>
+          <h1
+            th:if="${winnerExist == true && boxTicked == maxTick}"
+            class="lose"
+          >
+            DRAW ...
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div th:if="${startGame == false}" class="startGame">
+        <button
+          type="button"
+          th:onclick="|window.location.href='/tictactoe/startGame'|"
+        >
+          Start The Game
+        </button>
+      </div>
+      <div
+        th:if="${startGame == true && startPlay == false}"
+        class="setPlayers"
+      >
+        <div
+          th:replace="/shared/player-configuration :: player-configuration"
+        ></div>
+      </div>
+      <div
+        th:if="${startGame == true && startPlay == true}"
+        class="game-wrapper"
+      >
+        <div th:replace="/shared/games-grid :: games-grid"></div>
+      </div>
+    </main>
+  </body>
+</html>
